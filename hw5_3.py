@@ -19,8 +19,8 @@ def experiment(num_samples):
         samp = np.random.choice(all_votes, num_samples, replace=False)
         counts = Counter(samp)
         most_common = counts.most_common(1)[0]
-        if counts.most_common(1)[0][0] == -1:
-        # if most_common[0] == -1 and most_common[1] >= NUM_SAMPLES / 2:
+        if counts.most_common(1)[0][0] == -1: # use this line for plurality vote (most common vote wins)
+        # if most_common[0] == -1 and most_common[1] >= num_samples / 2: # use this line for majority vote (greater than 50% wins)
             sum_neg_one += 1
 
     return float(sum_neg_one) / 200
